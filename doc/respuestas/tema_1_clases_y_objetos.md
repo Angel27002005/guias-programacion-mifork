@@ -19,16 +19,16 @@ Aquí tienes el contenido para tu archivo:
 
 ---
 
-# TEMA 1. Clases y objetos
+# TEMA 1. Clases y objetos (Revisado con apuntes de clase)
 
 ## 1. ¿Cuáles son las cuatro características básicas de la programación orientada a objetos? Describe brevemente cada una
 
 ### Respuesta
 
-1. **Abstracción:** Capacidad de ignorar los detalles irrelevantes y centrarse en las características esenciales de un objeto.
-2. **Encapsulamiento:** Agrupación de datos y métodos en una sola unidad, protegiendo el estado interno del objeto del acceso directo exterior.
-3. **Herencia:** Mecanismo que permite crear nuevas clases basadas en clases existentes, reutilizando código y estableciendo jerarquías.
-4. **Polimorfismo:** Capacidad de que diferentes objetos respondan de forma distinta al mismo mensaje o llamada a un método.
+1. **Abstracción:** Consiste en ignorar los detalles irrelevantes para: a) Manejar temas complejos de forma más sencilla y b) Facilitar el mantenimiento y futuras modificaciones.
+2. **Encapsulación:** Tiene dos facetas: 1) Unir la información (datos) y las funciones que actúan sobre ella en un mismo artefacto y 2) Ocultar partes del estado interno al exterior.
+3. **Herencia:** Mecanismo para crear jerarquías de clases donde unas heredan de otras.
+4. **Polimorfismo:** Capacidad de que una misma función tenga distintas implementaciones dependiendo del tipo de objeto que la ejecuta.
 
 ## 2. Cita cuatro lenguajes populares que permitan la programación orientada a objetos
 
@@ -43,40 +43,40 @@ Aquí tienes el contenido para tu archivo:
 
 ### Respuesta
 
-* **Programación estructurada:** Se basa en dividir el programa en estructuras de control (secuencias, selecciones e iteraciones) y funciones, buscando mejorar la claridad y el flujo lógico.
-* **Programación modular:** Consiste en dividir un programa en partes independientes llamadas módulos, cada uno con una funcionalidad específica, lo que facilita el mantenimiento y la reutilización.
+* **Antes de la estructurada (Ensamblador):** Se basaba en secuencias de instrucciones y saltos arbitrarios (difíciles de seguir).
+* **Programación estructurada:** Utiliza solo tres estructuras (secuencia, bifurcación como `if`/`switch`, e iteración como `while`/`for`), eliminando los saltos arbitrarios para ganar claridad.
+* **Programación modular:** Introduce conceptos como "librería", "paquete" e "interfaz" para encapsular código y permitir su reutilización en diferentes partes de un sistema.
 
 ## 4. ¿Qué tres elementos definen a un objeto en programación orientada a objetos?
 
 ### Respuesta
 
-1. **Estado:** Representado por sus atributos o datos.
-2. **Comportamiento:** Representado por sus métodos o funciones.
-3. **Identidad:** Lo que diferencia a un objeto de otro, independientemente de su estado (su dirección única en memoria).
+1. **Identidad:** Es lo que hace único a un objeto (puedes pensarlo como su dirección única en memoria).
+2. **Estado:** Definido por sus atributos o campos (el valor que tienen en un momento dado).
+3. **Comportamiento:** Definido por sus métodos (las funciones que el objeto puede realizar).
 
 ## 5. ¿Qué es una clase? ¿Es lo mismo que un objeto? ¿Qué es una instancia? ¿Todos los lenguajes orientados a objetos manejan el concepto de clase?
 
 ### Respuesta
 
-* **Clase:** Es el "molde" o plantilla que define los atributos y métodos comunes a un tipo de objeto.
-* **Diferencia:** No es lo mismo; la clase es el diseño y el **objeto** es la entidad física creada a partir de ese diseño.
-* **Instancia:** Es sinónimo de objeto; el proceso de crear un objeto se llama "instanciar".
-* **Lenguajes:** No todos. Algunos lenguajes (como JavaScript en sus versiones originales) usan **prototipos** en lugar de clases.
+* **Clase:** Es el molde o plantilla que define el estado y el comportamiento. Ejemplo: La clase `Coche` (define que tiene marca y año).
+* **Objeto / Instancia:** Son las realizaciones concretas en ejecución de una clase. Ejemplo: Un `Mercedes` de `2009` o un `Mazda` de `2020`. Son términos equivalentes.
+* **Concepto de clase:** No todos; algunos lenguajes (como el JavaScript clásico) se basan en prototipos, no en clases.
 
 ## 6. ¿Dónde se almacenan en memoria los objetos? ¿Es igual en todos los lenguajes? ¿Qué es la **recolección de basura**?
 
 ### Respuesta
 
-* **Almacenamiento:** Generalmente en el **Heap** (montículo), mientras que las referencias a ellos suelen ir al **Stack** (pila).
-* **Diferencia entre lenguajes:** El concepto es similar, pero la gestión varía (C++ requiere liberación manual, Java es automática).
-* **Recolección de basura (Garbage Collection):** Es un proceso automático que identifica y elimina objetos que ya no tienen referencias activas para liberar memoria.
+* **Memoria:** Los objetos se suelen alojar en el **Heap**.
+* **Gestión:** Varía según el lenguaje; en C++ la gestión es manual, mientras que en Java es automática.
+* **Recolección de basura:** Es el proceso automático que libera la memoria ocupada por objetos que ya no están siendo utilizados por el programa.
 
 ## 7. ¿Qué es un método? ¿Qué es la **sobrecarga de métodos**?
 
 ### Respuesta
 
-* **Método:** Es una función definida dentro de una clase que representa una acción o comportamiento del objeto.
-* **Sobrecarga de métodos:** Capacidad de definir varios métodos con el mismo nombre en la misma clase, pero con diferentes parámetros (distinto número o tipo).
+* **Método:** Son las funciones que definen el comportamiento de una clase.
+* **Sobrecarga:** Es la posibilidad de crear varios métodos con el mismo nombre dentro de una clase, siempre que cambie el **tipo** y/o el **número** de sus parámetros.
 
 ## 8. Ejemplo mínimo de clase en Java, que se llame Punto, con dos atributos, x e y, con un método que se llame `calculaDistanciaAOrigen`, que calcule la distancia a la posición 0,0. Por sencillez, los atributos deben tener visibilidad por defecto. Crea además un ejemplo de uso con una instancia y uso del método
 
@@ -92,13 +92,12 @@ class Punto {
     }
 }
 
-// Ejemplo de uso
+// Uso
 public class Main {
     public static void main(String[] args) {
         Punto p = new Punto();
-        p.x = 3;
-        p.y = 4;
-        System.out.println("Distancia: " + p.calculaDistanciaAOrigen());
+        p.x = 3; p.y = 4;
+        System.out.println(p.calculaDistanciaAOrigen());
     }
 }
 
@@ -108,32 +107,30 @@ public class Main {
 
 ### Respuesta
 
-* **Punto de entrada:** El método `public static void main(String[] args)`.
-* **`static`:** Indica que el miembro pertenece a la clase y no a una instancia específica. Se puede llamar sin crear un objeto.
-* **Uso:** Se usa también para métodos de utilidad (como `Math.sqrt`) o variables compartidas.
-* **Combinación con `final`:** Se usa para definir **constantes** de clase (ej. `static final double PI = 3.1415;`).
+* **Entrada:** El método `public static void main(String[] args)`.
+* **`static`:** Indica que el miembro pertenece a la clase y no a las instancias. Permite usar el método o atributo sin crear un objeto.
+* **Uso:** Se usa en métodos de utilidad y variables globales de clase.
+* **`static final`:** Se usa para definir constantes (valores que pertenecen a la clase y no cambian).
 
 ## 10. Intenta ejecutar un poco de Java de forma básica, con los comandos `javac` y `java`. ¿Cómo podemos compilar el programa y ejecutarlo desde linea de comandos? ¿Java es compilado? ¿Qué es la **máquina virtual**? ¿Qué es el *byte-code* y los ficheros `.class`?
 
 ### Respuesta
 
-* **Comandos:** `javac Archivo.java` (compila) y `java Archivo` (ejecuta).
-* **¿Compilado?:** Es un híbrido; se compila a un código intermedio y luego se interpreta o compila en tiempo de ejecución (JIT).
-* **Máquina Virtual (JVM):** Entorno que ejecuta el código Java en cualquier sistema operativo.
-* **Byte-code:** El código intermedio generado por el compilador.
-* **Ficheros `.class`:** Archivos que contienen el byte-code resultante de la compilación.
+* **Comandos:** `javac Archivo.java` para compilar y `java Archivo` para ejecutar.
+* **Compilación:** Java es híbrido. Se compila a un código intermedio.
+* **Máquina Virtual (JVM):** Es el software que interpreta y ejecuta el código intermedio en cualquier plataforma.
+* **Byte-code:** Es el código resultante de la compilación (almacenado en ficheros `.class`) que la JVM puede entender.
 
 ## 11. En el código anterior de la clase `Punto` ¿Qué es `new`? ¿Qué es un **constructor**? Pon un ejemplo de constructor en una clase `Empleado` que tenga DNI, nombre y apellidos
 
 ### Respuesta
 
-* **`new`:** Operador que reserva memoria para un nuevo objeto y llama al constructor.
-* **Constructor:** Método especial que se ejecuta al crear un objeto para inicializar sus atributos.
+* **`new`:** Es el operador que solicita memoria para una nueva instancia y dispara el constructor.
+* **Constructor:** Un método especial para inicializar el objeto recién creado.
 
 ```java
 class Empleado {
     String dni, nombre, apellidos;
-
     Empleado(String dni, String nombre, String apellidos) {
         this.dni = dni;
         this.nombre = nombre;
@@ -147,13 +144,13 @@ class Empleado {
 
 ### Respuesta
 
-* **`this`:** Referencia al objeto actual dentro de uno de sus métodos o constructores.
-* **Otros lenguajes:** En Python se llama `self`, en PHP se usa `$this`.
+* **`this`:** Es una autorreferencia al objeto actual. Se usa para diferenciar atributos de parámetros con el mismo nombre.
+* **Otros lenguajes:** En Python es `self`.
 * **Ejemplo:**
 
 ```java
-void setUbicacion(double x, double y) {
-    this.x = x; // 'this.x' es el atributo, 'x' es el parámetro
+void setCoordenadas(double x, double y) {
+    this.x = x; // This.x es el atributo del objeto
     this.y = y;
 }
 
@@ -165,9 +162,7 @@ void setUbicacion(double x, double y) {
 
 ```java
 double distanciaA(Punto otro) {
-    double dx = this.x - otro.x;
-    double dy = this.y - otro.y;
-    return Math.sqrt(dx * dx + dy * dy);
+    return Math.sqrt(Math.pow(this.x - otro.x, 2) + Math.pow(this.y - otro.y, 2));
 }
 
 ```
@@ -176,21 +171,20 @@ double distanciaA(Punto otro) {
 
 ### Respuesta
 
-* **Punto:** En Java se pasa la **copia de la referencia**. Si modificas un atributo (`punto.x = 10`), el cambio **sí afecta** fuera del método.
-* **Entero (`int`):** Se pasa **por valor** (copia del dato). Si modificas el entero dentro de la función, el cambio **no afecta** a la variable original fuera.
+* **Objetos (`Punto`):** Se pasa la copia de la referencia. Si modificas un atributo interno, el cambio **sí afecta** fuera.
+* **Primitivos (`int`):** Se pasa por valor (copia exacta del dato). Cualquier cambio interno **no afecta** a la variable original.
 
 ## 15. ¿Qué es el método `toString()` en Java? ¿Existe en otros lenguajes? Pon un ejemplo de `toString()` en la clase `Punto` en Java
 
 ### Respuesta
 
-* **`toString()`:** Método que devuelve una representación en cadena (texto) del objeto.
-* **Otros lenguajes:** Python tiene `__str__` o `__repr__`.
+* **`toString()`:** Método que define cómo se debe representar el objeto como una cadena de texto.
 * **Ejemplo:**
 
 ```java
 @Override
 public String toString() {
-    return "Punto(x=" + x + ", y=" + y + ")";
+    return "(" + x + "," + y + ")";
 }
 
 ```
@@ -199,29 +193,26 @@ public String toString() {
 
 ### Respuesta
 
-Una clase es conceptualmente similar a un `struct`, pero al `struct` le falta:
+Conceptualmente son parecidos (agrupan datos), pero al `struct` le falta:
 
-1. **Métodos:** No puede contener lógica asociada directamente a los datos.
-2. **Control de acceso:** No tiene modificadores como `private` o `protected`.
-3. **Herencia y Polimorfismo:** No soporta jerarquías de tipos de forma nativa.
+1. **Comportamiento:** No puede contener métodos.
+2. **Ocultación (Encapsulamiento):** No tiene `private` o `public`.
+3. **Mecanismos de herencia.**
 
 ## 17. Quitemos un poco de magia a todo esto: ¿Como se podría “emular”, con `struct` en C, la clase `Punto`, con su función para calcular la distancia al origen? ¿Qué ha pasado con `this`?
 
 ### Respuesta
 
-En C se pasaría el puntero de la estructura manualmente a una función:
+En C, tendrías que pasar el objeto (la estructura) manualmente como primer argumento:
 
 ```c
 struct Punto { double x, y; };
-
-double calculaDistanciaAOrigen(struct Punto* p) {
-    return sqrt(p->x * p->x + p->y * p->y);
-}
+double distancia(struct Punto *p) { ... }
 
 ```
 
-**¿Qué pasó con `this`?** El puntero `p` que pasamos explícitamente es el equivalente funcional a `this`. En POO, ese paso de parámetro es automático y oculto.
+**`this`** no es "magia", es simplemente un parámetro que los lenguajes de POO pasan de forma automática y oculta por nosotros.
 
 ---
 
-¿Te gustaría que profundizara en algún concepto de estos o que pasemos al siguiente tema de tu guía?
+¿Qué te parece esta versión? Si estás conforme, puedes hacer el **Commit** y el **Push** en GitHub Desktop para que estos apuntes "Premium" queden guardados. ¿Quieres que sigamos con el **Tema 2**?
