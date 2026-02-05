@@ -13,10 +13,6 @@ Por favor, escribe en impersonal las respuestas.
 ----
 -->
 
-¡Claro! He preparado las respuestas siguiendo tu formato. He mantenido un tono conciso para facilitar tu estudio y he utilizado **Markdown** puro para que puedas copiar y pegar el contenido directamente en tu editor, tal como se sugiere en el flujo de trabajo de la "Alternativa 1".
-
-Aquí tienes el contenido para tu archivo:
-
 ---
 
 # TEMA 1. Clases y objetos (Revisado con apuntes de clase)
@@ -214,5 +210,3 @@ double distancia(struct Punto *p) { ... }
 **`this`** no es "magia", es simplemente un parámetro que los lenguajes de POO pasan de forma automática y oculta por nosotros.
 
 ---
-
-¿Qué te parece esta versión? Si estás conforme, puedes hacer el **Commit** y el **Push** en GitHub Desktop para que estos apuntes "Premium" queden guardados. ¿Quieres que sigamos con el **Tema 2**?
